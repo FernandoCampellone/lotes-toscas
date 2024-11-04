@@ -1,11 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState } from "react";
-import ImageMapper from "react-img-mapper";
-import imgLotes from "./assets/lotes.jpg";
-import { CustomArea } from "react-img-mapper";
 
-// Definimos la interfaz para el área
-// Definimos la interfaz para el mapa
+import ImageMapper from 'react-img-mapper';
+import imgLotes from './assets/lotes.jpg';
+import { CustomArea } from 'react-img-mapper';
+
 interface MapConfig {
   name: string;
   areas: CustomArea[];
@@ -22,8 +20,6 @@ interface MapConfig {
 //   ------d------
 
 const LotesMapper = () => {
-  const [hoveredArea, setHoveredArea] = useState<CustomArea | null>(null);
-
   const MAP: MapConfig = {
     name: "lotes-toscas",
     areas: [
@@ -109,53 +105,86 @@ const LotesMapper = () => {
       {
         id: "mza3-lote2",
         shape: "poly",
-        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [362, 358, 362, 463, 430, 463, 430, 358],
-        preFillColor: "green",
+
+        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [362,358,362,410,430,410,430,358],
+        preFillColor: "rgba(76, 175, 80, 0.3)",
+
       },
       {
         id: "mza3-lote3",
         shape: "poly",
-        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [362, 410, 362, 463, 430, 463, 430, 410],
-        preFillColor: "blue",
+        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [362,410,362,463,430,463,430,410],
+        preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       {
         id: "mza3-lote4",
         shape: "poly",
-        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [362, 515, 362, 463, 430, 463, 430, 515],
-        preFillColor: "red",
+        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [362,515,362,463,430,463,430,515],
+        preFillColor: "rgba(76, 175, 80, 0.3)",
+
       },
       {
         id: "mza3-lote9",
         shape: "poly",
-        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [295, 410, 295, 463, 360, 463, 360, 410],
-        preFillColor: "yellow",
+        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [295,410,295,463,360,463,360,410],
+        preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       {
         id: "mza3-lote10",
         shape: "poly",
-        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [295, 360, 295, 410, 360, 410, 360, 300],
-        preFillColor: "red",
+        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [295,360,295,410,362,410,362,300],
+        preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       {
         id: "mza3-lote1",
         shape: "poly",
-        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [362, 300, 362, 410, 430, 410, 430, 240],
-        preFillColor: "yellow",
+        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [362,300,362,355,430,355,430,240],
+        preFillColor: "rgba(76, 175, 80, 0.3)",
+      },
+      {
+        id: "mza3-lote8B",
+        shape: "poly",
+
+        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [297,490,297,463,362,463,362,490],
+        preFillColor: "rgba(76, 175, 80, 0.3)",
+      },
+      {
+        id: "mza3-lote8A",
+        shape: "poly",
+        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [297,515,297,490,362,490,362,515],
+        preFillColor: "rgba(76, 175, 80, 0.3)",
+      },
+      {
+        id: "mza3-lote5",
+        shape: "poly",
+        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [380,595,380,516,430,516,430,595],
+        preFillColor: "rgba(76, 175, 80, 0.3)",
+      },
+      {
+        id: "mza3-lote6",
+        shape: "poly",
+        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [380,595,380,516,348,516,348,595],
+        preFillColor: "rgba(76, 175, 80, 0.3)",
+      },
+      {
+        id: "mza3-lote7",
+        shape: "poly",
+        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [295,595,295,516,348,516,348,595],
+        preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       // 🍎 5
-      {
-        id: "mza5-lote2A",
-        shape: "poly",
-        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [313, 158, 313, 105, 280, 105, 280, 158],
-        preFillColor: "rgba(90, 11, 80, 0.3)",
-      },
+   
       {
         id: "mza5-lote2B",
         shape: "poly",
@@ -433,42 +462,30 @@ const LotesMapper = () => {
         preFillColor: "rgba(7, 11, 80, 0.3)",
       },
     ],
+
   };
 
   const handleAreaClick = (area: CustomArea) => {
     alert(`Seleccionaste: ${area.id}`);
   };
 
-  const handleAreaHover = (area: CustomArea) => {
-    setHoveredArea(area);
-  };
-
-  const getTipPosition = (area: CustomArea) => {
-    return { top: `${area.center?.[1]}px`, left: `${area.center?.[0]}px` };
-  };
-
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      <ImageMapper
-        src={imgLotes}
-        map={MAP}
-        width={1000}
-        onClick={handleAreaClick}
-        onMouseEnter={handleAreaHover}
-        onMouseLeave={() => setHoveredArea(null)}
-      />
-      {hoveredArea && (
-        <div
-          className="absolute bg-white px-2 py-1 rounded shadow-lg text-sm"
-          style={getTipPosition(hoveredArea)}
-        >
-          {hoveredArea.id}
-        </div>
-      )}
+
+    <div className="w-screen">
+      <div className="w-full flex justify-center">
+        <ImageMapper 
+          src={imgLotes}
+          map={MAP}
+          width={1000}
+          imgWidth={1000}
+          onClick={handleAreaClick} 
+        />
+      </div>
+
     </div>
+
   );
 };
 
 export default LotesMapper;
 
-//justifyContent: 'center', alignItems: 'center'
