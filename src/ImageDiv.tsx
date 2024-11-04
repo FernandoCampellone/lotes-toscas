@@ -1,17 +1,47 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useState } from 'react';
-import ImageMapper from 'react-img-mapper';
-import imgLotes from './assets/lotes.jpg';
-import { CustomArea } from 'react-img-mapper';
+import { useState } from "react";
+import ImageMapper from "react-img-mapper";
+import imgLotes from "./assets/lotes.jpg";
+import { CustomArea } from "react-img-mapper";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./components/ui/card";
+import { Input } from "./components/ui/input";
+import { Button } from "./components/ui/button";
+import { Dialog, DialogContent } from "./components/ui/dialog";
+import { Label } from "./components/ui/label";
 
 interface MapConfig {
   name: string;
   areas: CustomArea[];
 }
 
-const LotesMapper = () => {
+interface LoteInfo {
+  manzana: string;
+  lote: string;
+  fraccion: string;
+  propietario: string;
+  telefonoPropietario: string;
+  inquilino: string;
+  telefonoInquilino: string;
+}
 
-    const [selectedLote, setSelectedLote] = useState<CustomArea | null>(null);
+export default function ImageDiv() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [loteInfo, setLoteInfo] = useState<LoteInfo>({
+    manzana: "",
+    lote: "",
+    fraccion: "",
+    propietario: "",
+    telefonoPropietario: "",
+    inquilino: "",
+    telefonoInquilino: "",
+  });
+
   const MAP: MapConfig = {
     name: "lotes-toscas",
     areas: [
@@ -98,85 +128,83 @@ const LotesMapper = () => {
         id: "mza3-lote2",
         shape: "poly",
 
-        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [362,358,362,410,430,410,430,358],
+        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [362, 358, 362, 410, 430, 410, 430, 358],
         preFillColor: "rgba(76, 175, 80, 0.3)",
-
       },
       {
         id: "mza3-lote3",
         shape: "poly",
-        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [362,410,362,463,430,463,430,410],
+        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [362, 410, 362, 463, 430, 463, 430, 410],
         preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       {
         id: "mza3-lote4",
         shape: "poly",
-        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [362,515,362,463,430,463,430,515],
+        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [362, 515, 362, 463, 430, 463, 430, 515],
         preFillColor: "rgba(76, 175, 80, 0.3)",
-
       },
       {
         id: "mza3-lote9",
         shape: "poly",
-        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [295,410,295,463,360,463,360,410],
+        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [295, 410, 295, 463, 360, 463, 360, 410],
         preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       {
         id: "mza3-lote10",
         shape: "poly",
-        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [295,360,295,410,362,410,362,300],
+        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [295, 360, 295, 410, 362, 410, 362, 300],
         preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       {
         id: "mza3-lote1",
         shape: "poly",
-        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [362,300,362,355,430,355,430,240],
+        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [362, 300, 362, 355, 430, 355, 430, 240],
         preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       {
         id: "mza3-lote8B",
         shape: "poly",
 
-        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [297,490,297,463,362,463,362,490],
+        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [297, 490, 297, 463, 362, 463, 362, 490],
         preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       {
         id: "mza3-lote8A",
         shape: "poly",
-        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [297,515,297,490,362,490,362,515],
+        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [297, 515, 297, 490, 362, 490, 362, 515],
         preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       {
         id: "mza3-lote5",
         shape: "poly",
-        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [380,595,380,516,430,516,430,595],
+        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [380, 595, 380, 516, 430, 516, 430, 595],
         preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       {
         id: "mza3-lote6",
         shape: "poly",
-        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [380,595,380,516,348,516,348,595],
+        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [380, 595, 380, 516, 348, 516, 348, 595],
         preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       {
         id: "mza3-lote7",
         shape: "poly",
-        scaledCoords:  [50, 50, 150, 50, 150, 100, 50, 100],
-        coords: [295,595,295,516,348,516,348,595],
+        scaledCoords: [50, 50, 150, 50, 150, 100, 50, 100],
+        coords: [295, 595, 295, 516, 348, 516, 348, 595],
         preFillColor: "rgba(76, 175, 80, 0.3)",
       },
       // 🍎 5
-   
+
       {
         id: "mza5-lote2B",
         shape: "poly",
@@ -454,29 +482,121 @@ const LotesMapper = () => {
         preFillColor: "rgba(7, 11, 80, 0.3)",
       },
     ],
-
   };
 
   const handleLoteClick = (area: CustomArea) => {
-    setSelectedLote(area);
+    // Extraer información del lote de manera segura
+    const areaId = area.id || "";
+    const [manzana = "", loteInfo = ""] = areaId.split("-");
+    const [lote = "", fraccion = ""] = loteInfo
+      .replace("lote", "")
+      .split(/([AB])/);
+
+    setLoteInfo({
+      manzana: manzana.replace("mza", ""),
+      lote: lote,
+      fraccion: fraccion,
+      propietario: "Matías Lor",
+      telefonoPropietario: "3513408488",
+      inquilino: "Fernando Campellone",
+      telefonoInquilino: "3515509599",
+    });
+    setIsDialogOpen(true);
   };
 
   return (
-
     <div className="w-screen">
       <div className="w-full flex justify-center">
-        <ImageMapper 
+        <ImageMapper
           src={imgLotes}
           map={MAP}
           width={1000}
           imgWidth={1000}
-          onClick={(area) => handleLoteClick(area)} 
+          onClick={(area: CustomArea) => handleLoteClick(area)}
         />
       </div>
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="sm:max-w-[425px] bg">
+          <Card className="w-[350px] bg-black">
+            <CardHeader>
+              <CardTitle>Las Toscas</CardTitle>
+              <CardDescription>Información de la propiedad</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <form>
+                <div className="grid w-full items-center gap-4">
+                  <div className="flex flex-row justify-between">
+                    <div className="flex flex-col space-y-1.5">
+                      <Label htmlFor="manzana">Manzana</Label>
+                      <Input
+                        className="w-12 text-center"
+                        id="manzana"
+                        value={loteInfo.manzana}
+                        readOnly
+                      />
+                    </div>
+                    <div className="flex flex-col space-y-1.5">
+                      <Label htmlFor="lote">Lote</Label>
+                      <Input
+                        className="w-12 text-center"
+                        id="lote"
+                        value={loteInfo.lote}
+                        readOnly
+                      />
+                    </div>
+                    <div className="flex flex-col space-y-1.5">
+                      <Label htmlFor="fraccion">Fracción</Label>
+                      <Input
+                        className="w-12 text-center"
+                        id="fraccion"
+                        value={loteInfo.fraccion}
+                        readOnly
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-col space-y-1.5">
+                    <Label htmlFor="propietario">Propietario</Label>
+                    <Input
+                      id="propietario"
+                      value={loteInfo.propietario}
+                      readOnly
+                    />
+                  </div>
+                  <div className="flex flex-col space-y-1.5">
+                    <Label htmlFor="telefonoPropietario">
+                      Teléfono Propietario
+                    </Label>
+                    <Input
+                      id="telefonoPropietario"
+                      value={loteInfo.telefonoPropietario}
+                      readOnly
+                    />
+                  </div>
+                  <div className="flex flex-col space-y-1.5">
+                    <Label htmlFor="inquilino">Inquilino</Label>
+                    <Input id="inquilino" value={loteInfo.inquilino} readOnly />
+                  </div>
+                  <div className="flex flex-col space-y-1.5">
+                    <Label htmlFor="telefonoInquilino">
+                      Teléfono Inquilino
+                    </Label>
+                    <Input
+                      id="telefonoInquilino"
+                      value={loteInfo.telefonoInquilino}
+                      readOnly
+                    />
+                  </div>
+                </div>
+              </form>
+            </CardContent>
+            <CardFooter className="flex justify-center">
+              <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
+                Cerrar
+              </Button>
+            </CardFooter>
+          </Card>
+        </DialogContent>
+      </Dialog>
     </div>
-
   );
-};
-
-export default LotesMapper;
-
+}
