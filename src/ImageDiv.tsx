@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
+import React, { useState } from 'react';
 import ImageMapper from 'react-img-mapper';
 import imgLotes from './assets/lotes.jpg';
 import { CustomArea } from 'react-img-mapper';
@@ -9,17 +9,9 @@ interface MapConfig {
   areas: CustomArea[];
 }
 
-// Shapes functions
-// 4 sides [a,b,a,c,d,c,d,b]
-//   ------b------
-//  |             |
-//  |             |
-//  a             c
-//  |             |
-//  |             |
-//   ------d------
-
 const LotesMapper = () => {
+
+    const [selectedLote, setSelectedLote] = useState<CustomArea | null>(null);
   const MAP: MapConfig = {
     name: "lotes-toscas",
     areas: [
@@ -465,8 +457,8 @@ const LotesMapper = () => {
 
   };
 
-  const handleAreaClick = (area: CustomArea) => {
-    alert(`Seleccionaste: ${area.id}`);
+  const handleLoteClick = (area: CustomArea) => {
+    setSelectedLote(area);
   };
 
   return (
@@ -478,10 +470,9 @@ const LotesMapper = () => {
           map={MAP}
           width={1000}
           imgWidth={1000}
-          onClick={handleAreaClick} 
+          onClick={(area) => handleLoteClick(area)} 
         />
       </div>
-
     </div>
 
   );
