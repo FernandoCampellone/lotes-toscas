@@ -13,19 +13,8 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
-import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 
 import { Button } from "./components/ui/button"
-import { Checkbox } from "./components/ui/checkbox"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "./components/ui/dropdown-menu"
-import { Input } from "./components/ui/input"
 import {
   Table,
   TableBody,
@@ -45,6 +34,15 @@ const data: Owner[] = [
     phoneTenant: 3513307378,
     debtor: false
 
+},
+{
+    id:"asddsa2",
+    name: "Fernando Campellone",
+    block: "Manzana 2 Lote 1 C",
+    phoneOwner: 3514307773,
+    tenant: "Matias Lor",
+    phoneTenant: 3513307378,
+    debtor: true
 }
 ]
 
@@ -68,35 +66,44 @@ export const columns: ColumnDef<Owner>[] = [
     accessorKey: "name",
     header: "Propietario",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("name")}</div>
+      <div className="capitalize text-xs">{row.getValue("name")}</div>
     ),
   },
   {
     accessorKey: "block",
     header: "Manzana/Lote",
-    cell: ({ row }) => <div className="">{row.getValue("block")}</div>,
+    cell: ({ row }) => <div className="capitalize text-xs">{row.getValue("block")}</div>,
   },
   {
     accessorKey: "phoneOwner",
     header: "Teléfono Propietario",
-    cell: ({ row }) => <div className="">{row.getValue("phoneOwner")}</div>
+    cell: ({ row }) => <div className="capitalize text-xs">{row.getValue("phoneOwner")}</div>
 
   },
   {
     accessorKey:"tenant",
     header:"Inquilino",
-    cell: ({ row }) => <div className="">{row.getValue("tenant")}</div>
+    cell: ({ row }) => <div className="capitalize text-xs">{row.getValue("tenant")}</div>
   },
   {
     accessorKey:"phoneTenant",
     header: "Teléfono Inquilino",
-    cell: ({ row }) => <div className="">{row.getValue("phoneTenant")}</div>
+    cell: ({ row }) => <div className="capitalize text-xs">{row.getValue("phoneTenant")}</div>
   },
   {
     accessorKey:"debtor",
     header:"Deudor",
-  }
-
+    cell: ({ row }) => <div className="capitalize text-xs">{row.getValue("debtor") ? "True" : "False"}</div>
+  },
+  {
+    id: "actions",
+    enableHiding: false,
+    cell: () => {
+      return (
+        <Button className="text-xs">Editar</Button>
+      )
+    },
+  },
 ]
 
 export default function DataTableDemo() {
@@ -106,7 +113,7 @@ export default function DataTableDemo() {
   )
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({})
-  const [rowSelection, setRowSelection] = React.useState({})
+
 
   const table = useReactTable({
     data,
@@ -118,30 +125,18 @@ export default function DataTableDemo() {
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
-    onRowSelectionChange: setRowSelection,
     state: {
       sorting,
       columnFilters,
       columnVisibility,
-      rowSelection,
     },
   })
 
   return (
-    <div className="mx-auto max-w-[1200px]">
-      <div className="flex items-center py-4">
-        <Input
-          placeholder="Filtrar por nombre"
-          value={(table.getColumn("owner")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("owner")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        />
-      </div>
+    <div className="mx-auto max-w-[1300px]">
       <div className="rounded-md border">
         <Table>
-          <TableHeader>
+          <TableHeader className="bg-orange-400 text-l">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -164,7 +159,7 @@ export default function DataTableDemo() {
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
+                  data-state={row.getIsSelected()}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
@@ -190,10 +185,6 @@ export default function DataTableDemo() {
         </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="flex-1 text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
-        </div>
         <div className="space-x-2">
           <Button
             variant="outline"
