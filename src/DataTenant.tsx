@@ -43,7 +43,274 @@ const data: Owner[] = [
     tenant: "Matias Lor",
     phoneTenant: 3513307378,
     debtor: true
-}
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
+{
+  id:"asddsa",
+  name: "Matias Lor",
+  block: "Manzana 1 Lote 1 A",
+  phoneOwner: 3514307773,
+  tenant: "Fernando Campellone",
+  phoneTenant: 3513307378,
+  debtor: false
+
+},
+{
+  id:"asddsa2",
+  name: "Fernando Campellone",
+  block: "Manzana 2 Lote 1 C",
+  phoneOwner: 3514307773,
+  tenant: "Matias Lor",
+  phoneTenant: 3513307378,
+  debtor: true
+},
 ]
 
 export type Owner = {
@@ -133,77 +400,79 @@ export default function DataTableDemo() {
   })
 
   return (
-    <div className="mx-auto max-w-[1300px] text-black">
-      <div className="rounded-md border">
-        <Table>
-          <TableHeader style={{ backgroundColor: '#6ab70e' }} className="text-l">
-            {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <TableHead key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </TableHead>
-                  )
-                })}
-              </TableRow>
-            ))}
-          </TableHeader>
-          <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected()}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </TableCell>
-                  ))}
+    <main className="min-h-screen w-screen bg-background bg-red-600 pt-9 flex justify-center">
+      <div className="flex flex-col mx-auto w-9/12 h-5/6 text-black mt-4 bg-green-600">
+        <div className="rounded-md border">
+          <Table>
+            <TableHeader style={{ backgroundColor: '#6ab70e' }} className="text-l">
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => {
+                    return (
+                      <TableHead key={header.id}>
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
+                      </TableHead>
+                    )
+                  })}
                 </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 text-center"
-                >
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      </div>
-      <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="space-x-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Previous
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Next
-          </Button>
+              ))}
+            </TableHeader>
+            <TableBody>
+              {table.getRowModel().rows?.length ? (
+                table.getRowModel().rows.map((row) => (
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected()}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id}>
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell
+                    colSpan={columns.length}
+                    className="h-24 text-center"
+                  >
+                    No results.
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </div>
+        <div className="flex items-center justify-end space-x-2 py-4">
+          <div className="space-x-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => table.previousPage()}
+              disabled={!table.getCanPreviousPage()}
+            >
+              Previous
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => table.nextPage()}
+              disabled={!table.getCanNextPage()}
+            >
+              Next
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
