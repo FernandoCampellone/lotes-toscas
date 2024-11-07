@@ -133,10 +133,10 @@ export default function DataTableDemo() {
   })
 
   return (
-    <div className="mx-auto max-w-[1300px]">
+    <div className="mx-auto max-w-[1300px] text-black">
       <div className="rounded-md border">
         <Table>
-          <TableHeader className="bg-orange-400 text-l">
+          <TableHeader style={{ backgroundColor: '#6ab70e' }} className="text-l">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
