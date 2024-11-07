@@ -1,11 +1,14 @@
-import * as React from "react";
-import { Menu } from "lucide-react";
-
+import React, { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "./components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./components/ui/sheet";
+import { LoginForm } from "./login";
+import { RegisterForm } from "./register";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
+  const { isAuthenticated, logout, user } = useAuth0();
 
   return (
     <>
@@ -46,49 +49,45 @@ export default function Navbar() {
               </div>
             </div>
             <div className="hidden md:block">
-              <Button variant="secondary">Login</Button>
-            </div>
-            <div className="md:hidden">
-              <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="outline" size="icon">
-                    <Menu className="h-6 w-6" />
-                    <span className="sr-only">Abrir menú</span>
+              {isAuthenticated ? (
+                <div className="flex items-center space-x-4">
+                  <span>Bienvenido, {user?.name}</span>
+                  <Button
+                    variant="secondary"
+                    onClick={() => logout({ returnTo: window.location.origin })}
+                  >
+                    Cerrar sesión
                   </Button>
-                </SheetTrigger>
-                <SheetContent
-                  side="right"
-                  className="bg-gray-800 text-gray-100"
-                >
-                  <nav className="flex flex-col space-y-4 mt-4">
-                    <a
-                      href="#"
-                      className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      Inicio
-                    </a>
-                    <a
-                      href="#"
-                      className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      Acerca
-                    </a>
-                    <a
-                      href="#"
-                      className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      Servicios
-                    </a>
-                    <a
-                      href="#"
-                      className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                      Contacto
-                    </a>
-                    <Button variant="secondary">Iniciar sesión</Button>
-                  </nav>
-                </SheetContent>
-              </Sheet>
+                </div>
+              ) : (
+                <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                  <SheetTrigger asChild>
+                    <Button variant="secondary">Login / Registro</Button>
+                  </SheetTrigger>
+                  <SheetContent
+                    side="right"
+                    className="bg-gray-800 text-gray-100"
+                  >
+                    <nav className="flex flex-col space-y-4 mt-4">
+                      <div className="flex justify-between mb-4">
+                        <Button
+                          variant={showLogin ? "secondary" : "ghost"}
+                          onClick={() => setShowLogin(true)}
+                        >
+                          Login
+                        </Button>
+                        <Button
+                          variant={!showLogin ? "secondary" : "ghost"}
+                          onClick={() => setShowLogin(false)}
+                        >
+                          Registro
+                        </Button>
+                      </div>
+                      {showLogin ? <LoginForm /> : <RegisterForm />}
+                    </nav>
+                  </SheetContent>
+                </Sheet>
+              )}
             </div>
           </div>
         </div>
